@@ -5,7 +5,8 @@ import 'package:alarm_app/res/colors/app_color.dart';
 import 'package:alarm_app/view/clock/clock_page.dart';
 import 'package:flutter/material.dart';
 
-import '../home/widgets/more_icon_button.dart';
+import 'widgets/alarm_text.dart';
+import 'widgets/more_icon_button.dart';
 
 class AlarmPage extends StatefulWidget {
   const AlarmPage({super.key});
@@ -20,7 +21,7 @@ class _AlarmPageState extends State<AlarmPage> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColor.greyColor,
+      backgroundColor: AppColor.greyColor300,
       body: Column(
         children: [
           const SizedBox(
@@ -31,7 +32,6 @@ class _AlarmPageState extends State<AlarmPage> {
                 horizontal: (width - min(height, width) * 0.8) / 2),
             child: Container(
               height: min(height, width) * 0.8,
-              width: min(height, width) * 0.8,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.white,
@@ -58,13 +58,37 @@ class _AlarmPageState extends State<AlarmPage> {
                       ),
                     ],
                   ),
-                  ClockPage()
+                  ClockPage(),
+                  SizedBox(height: 15),
+                  AlarmText(),
                 ],
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Container(
+          height: 60,
+          width: 60,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  AppColor.CardGradientTopLeft,
+                  AppColor.CardGradientBottomRight,
+                ]),
+          ),
+          child: Icon(Icons.add_outlined),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

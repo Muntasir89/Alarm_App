@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-              backgroundColor: AppColor.greyColor,
+              backgroundColor: AppColor.greyColor300,
               elevation: 0,
               centerTitle: true,
               title: const AlarmTabBar()),

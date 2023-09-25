@@ -11,7 +11,7 @@ class AlarmTabBar extends StatelessWidget {
       isScrollable: true,
       labelColor: AppColor.blackColor,
       unselectedLabelColor: AppColor.blackColor,
-      indicatorColor: AppColor.greyShadowColor,
+      indicatorColor: AppColor.greyShadowColor500,
       tabs: [
         tabItem('Alarm'),
         tabItem('Clock'),
@@ -29,7 +29,7 @@ class AlarmTabBar extends StatelessWidget {
           fontFamily: AppFontFamily.Roboto_Medium,
           fontSize: 15,
           fontWeight: FontWeight.bold,
-          color: AppColor.greyShadowColor,
+          color: AppColor.greyShadowColor500,
           shadows: [
             Shadow(offset: Offset(3, 3), color: Colors.black38, blurRadius: 10),
             Shadow(

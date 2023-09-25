@@ -1,3 +1,4 @@
+import 'package:alarm_app/res/colors/app_color.dart';
 import 'package:flutter/material.dart';
 
 class MoreIconButton extends StatelessWidget {
@@ -8,16 +9,22 @@ class MoreIconButton extends StatelessWidget {
     return Container(
       // duration: Duration(milliseconds: 250),
       decoration: BoxDecoration(
-          color: Colors.grey[300],
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                AppColor.CardGradientTopLeft,
+                AppColor.CardGradientBottomRight,
+              ]),
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-                color: Colors.grey.shade600,
+                color: AppColor.greyShadowColor500,
                 offset: Offset(2, 2),
                 blurRadius: 2,
                 spreadRadius: 0.1),
             BoxShadow(
-                color: Colors.white,
+                color: AppColor.whiteColor,
                 offset: Offset(-2, -2),
                 blurRadius: 2,
                 spreadRadius: 0.1)
